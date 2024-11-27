@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	helpers "github.com/charlesshook/aoc-cli/utils"
+	utils "github.com/charlesshook/aoc-cli/internal/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -45,7 +45,7 @@ func getInput(cmd *cobra.Command, args []string) {
 	}
 
 	url := fmt.Sprintf("https://adventofcode.com/%d/day/%d/input", year, day)
-	data, _ := helpers.GetDataFromUrlWithCookie(url, cookie)
+	data, _ := utils.GetDataFromUrlWithCookie(url, cookie)
 
 	cwd, err := os.Getwd()
 
@@ -54,5 +54,5 @@ func getInput(cmd *cobra.Command, args []string) {
 		return
 	}
 
-	helpers.WriteToFile(fmt.Sprintf("%s/%d/%d/input.txt", cwd, year, day), data)
+	utils.WriteToFile(fmt.Sprintf("%s/%d/%d/input.txt", cwd, year, day), data)
 }
