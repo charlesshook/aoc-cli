@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
+	"path/filepath"
 	"time"
 )
 
@@ -38,4 +40,20 @@ func GetDataFromUrlWithCookie(url string, cookie string) (data []byte, err error
 	}
 
 	return data, nil
+}
+
+func WriteToFile(filename string, data []byte) error {
+	err := os.MkdirAll(filepath.Dir(filename), os.ModePerm)
+
+	if err != nil {
+		return err
+	}
+
+	err = os.WriteFile(filename, data, os.FileMode(0644))
+
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
