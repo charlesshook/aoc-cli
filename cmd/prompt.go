@@ -12,7 +12,7 @@ import (
 var promptCmd = &cobra.Command{
 	Use:   "prompt",
 	Short: "Gets AOC prompt.",
-	Long:  "Gets the Advent of Code prompt for a given day and year",
+	Long:  "Gets the Advent of Code prompt for a given day and year.",
 	Run:   getPrompt,
 }
 
@@ -40,7 +40,7 @@ func getPrompt(cmd *cobra.Command, args []string) {
 	}
 
 	if cookie == "" {
-		fmt.Println("Cookie cannot be left empty")
+		fmt.Println("Cookie cannot be left empty.")
 		return
 	}
 

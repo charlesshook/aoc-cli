@@ -12,7 +12,7 @@ import (
 var inputCmd = &cobra.Command{
 	Use:   "input",
 	Short: "Gets input file.",
-	Long:  "Gets the Advent of Code input file for a given day and year",
+	Long:  "Gets the Advent of Code input file for a given day and year.",
 	Run:   getInput,
 }
 
@@ -40,7 +40,7 @@ func getInput(cmd *cobra.Command, args []string) {
 	}
 
 	if cookie == "" {
-		fmt.Println("Cookie cannot be left empty")
+		fmt.Println("Cookie cannot be left empty.")
 		return
 	}
 
@@ -50,7 +50,7 @@ func getInput(cmd *cobra.Command, args []string) {
 	cwd, err := os.Getwd()
 
 	if err != nil {
-		fmt.Println("Could not get cwd")
+		fmt.Println("Could not get cwd.")
 		return
 	}
 
