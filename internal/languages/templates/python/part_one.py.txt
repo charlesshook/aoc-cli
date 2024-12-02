@@ -1,0 +1,2 @@
+def partOne():
+    return 0
