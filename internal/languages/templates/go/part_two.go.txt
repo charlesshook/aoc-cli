@@ -1,0 +1,5 @@
+package main
+
+func partOne() int {
+	return 0
+}
